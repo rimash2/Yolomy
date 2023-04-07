@@ -1,0 +1,24 @@
+## IP-WEEK-7 - Containerization with Docker
+In this project we will use a Dockerfile and Docker-compose to build and run the containers to make the web app runs on our browser.
+Build a basic microservice to run the app.
+
+## Description
+This is IP for week 7 at Moringa school
+Below is the link to the website
+https://github.com/rimash2/Yolomy
+
+Technologies Tested
+## MongoDB
+## Dockerfile
+## Docker-Compose
+## Networking and Port mapping
+## Node
+
+## Support and contact details
+ngaruiyamartha22@gmail.com
+
+## License
+GNU General Public License v3.0
+
+## Contributor
+Martha Ngaruiya
