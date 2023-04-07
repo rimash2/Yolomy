@@ -1,0 +1,27 @@
+version: '3'
+# Backend yolomy
+services:
+  backend:
+    tty: true
+    image: mngaruiya/yoloreactapibackend
+    ports:
+      - "5000:5000"
+    volumes: 
+      - mongo_db:/data/db
+
+    
+  # Frontend yolomy
+  client:
+    tty: true
+    image: mngaruiya/yoloreactapiclient
+    ports:
+      - "3000:3000"     
+    depends_on:
+      - backend 
+    
+    volumes: 
+      - mongo_db:/data/db
+
+volumes:
+  mongo_db: {}
+
