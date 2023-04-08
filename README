@@ -1,6 +1,7 @@
-## IP-WEEK-7 - Containerization with Docker
+## IP-WEEK-7 - Containerization with Docker-Project Description
 In this project we will use a Dockerfile and Docker-compose to build and run the containers to make the web app runs on our browser.
 Build a basic microservice to run the app.
+The application is an e-commerce website that doubles-up as a dashboard where you can load retail products on to the site. 
 
 ## Description
 This is IP for week 7 at Moringa school
