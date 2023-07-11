@@ -1,4 +1,5 @@
-HOW I TACKLED THIS WEEK's IP
+## HOW I TACKLED THIS WEEK's IP
+Used previous dockerised project-https://github.com/rimash2/Yolomy.git clonned from https://github.com/Vinge1718/yolo.git
 ## Created Kubernetes Folder and created the following folders under Kubernetes.
 ## 1.Bakend
 ## 2.Client
@@ -29,16 +30,25 @@ kubectl apply -f filename.yml
 First is to get the ip adress of the of kubernetes cluster
 Command kubectl get node -o wide
 This will prompt INTERNAL-IP of the minikube
-It is this ip that get prepended to the nodePort declared as in yolo-client service
+It is this ip that get prepended to the nodePort declared as in client service
 minikube service client
+![Alt text](image-1.png)
+##  http://192.168.49.2:31696 
 
 
 ## How To Display the backend Side on the browser with the format ipaddress:port
 First is to get the ip adress of the of kubernetes cluster
 Command kubectl get node -o wide
 This will prompt INTERNAL-IP of the minikube
-It is this ip that get prepended to the nodePort declared as in yolo-backend service
-minikube service backenD
-![!](C:\Users\J-PC\Pictures\URL.PNG)[Backend URL:PORT](image-2.png)
+It is this ip that get prepended to the nodePort declared as in backend service
+minikube service backend
+![Alt text](image.png)
+##  http://192.168.49.2:31217 
+To be able to get client API get communication from the backend you will have to change the proxy in the following areas.
+## package.json proxy-"http://localhost:5000",
+## src/components/ProductControl.js - Anywhere "http://localhost:5000/api/products" has been referenced.
+Otherwise at the moment if database is connected locally on "http://localhost:5000" Client will work since its at the moment communicating with backend on that URL.
+
+
 
 
