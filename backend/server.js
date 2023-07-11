@@ -8,7 +8,7 @@ require('dotenv').config();
 const productRoute = require('./routes/api/productRoute');
 
 // Connecting to the Database
-let mongodb_url = 'mongodb+srv://docker:yar123@cluster0.vcunaza.mongodb.net/?retryWrites=true&w=majority';
+let mongodb_url = 'mongodb://docker:yar123@ac-1mgpxlq-shard-00-00.vcunaza.mongodb.net:27017,ac-1mgpxlq-shard-00-01.vcunaza.mongodb.net:27017,ac-1mgpxlq-shard-00-02.vcunaza.mongodb.net:27017/?ssl=true&replicaSet=atlas-uw0o7u-shard-0&authSource=admin&retryWrites=true&w=majority';
 let dbName = 'yolomy';
 
 // define a url to connect to the database
