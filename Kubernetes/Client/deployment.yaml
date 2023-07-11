@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client
+  template:
+    metadata:
+      labels:
+        app: client
+    spec:
+      containers:
+        - name: yoloclientcontainer
+          image: mngaruiya/client_k8s:1.0.0
+          imagePullPolicy: Always
+          stdin: true
+          tty: true
+          ports:
+            - containerPort: 3000
+             
+          
