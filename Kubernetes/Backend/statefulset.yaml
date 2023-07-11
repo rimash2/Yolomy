@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  serviceName: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: mongo:5.0.16
+          env:
+            - name: MONGO_DB
+              value: yolomy
+          ports:
+            - containerPort: 27017
+          volumeMounts:
+            - name: backend
+              mountPath: /etc/data/backend
+  volumeClaimTemplates:
+    - metadata:
+        name: backend
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
