@@ -17,8 +17,17 @@ spec:
         - name: backend
           image: mongo:5.0.16
           env:
-            - name: MONGO_DB
-              value: yolomy
+          - name: PORT
+            valueFrom:
+              configMapKeyRef:
+                name: backend
+                key: PORT
+          - name: MONGODB_URI
+            valueFrom:
+              secretKeyRef:
+                name: backend-secret
+                key: MONGODB_URI
+
           ports:
             - containerPort: 27017
               name: mongodb
