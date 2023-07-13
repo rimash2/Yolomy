@@ -3,7 +3,7 @@ kind: StatefulSet
 metadata:
   name: backend
 spec:
-  replicas: 1
+  replicas: 
   selector:
     matchLabels:
       app: backend
@@ -21,15 +21,13 @@ spec:
               value: yolomy
           ports:
             - containerPort: 27017
-          volumeMounts:
-            - name: backend
-              mountPath: /etc/data/backend
-  volumeClaimTemplates:
-    - metadata:
-        name: backend
-      spec:
-        accessModes:
-          - ReadWriteOnce
-        resources:
-          requests:
-            storage: 1Gi
+              name: mongodb
+          volumeMounts: 
+          
+            -   name: mongodb-persistent-storage
+                mountPath: /data/db
+      volumes: 
+          
+         -  name: mongodb-persistent-storage
+            persistentVolumeClaim: 
+              claimName: backend-pvc
